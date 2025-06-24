@@ -19,26 +19,24 @@
           <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="#">Download App</a></li>
+            <li><a href="#">Cart</a></li>
           </ul>
           </div>
         </nav>
       </div>
     </header>
-
     <div class="checkout-container">
       <h2>Order Summary</h2>
       <div id="checkout-items"></div>
       <h3 id="checkout-total">Total: R0</h3>
-
       <form onsubmit="handleCheckout(event)">
         <h2>Billing Details</h2>
-        <input type="text" id="fullName" placeholder="Full Name" required>
-        <input type="text" id="address" placeholder="Address" required>
-        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="fullName" placeholder="Full Name" required></br>
+        <input type="text" id="address" placeholder="Address" required></br>
+        <input type="email" id="email" placeholder="Email" required></br>
         <button type="submit">Pay Now</button>
       </form>
     </div>
-
 </body>
   <script src="../js/script.js"></script>
 </html>

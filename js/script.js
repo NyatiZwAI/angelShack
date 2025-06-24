@@ -36,3 +36,40 @@ window.addEventListener("scroll", () => {
   });
 });
 
+function loadCartItemsCheckout() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const container = document.getElementById("checkout-items");
+  const total = document.getElementById("checkout-total");
+  if (!container || !total) return;
+
+  container.innerHTML = "";
+  let sum = 0;
+
+  cart.forEach((item) => {
+    sum += item.price;
+    container.innerHTML += `
+      <div class="cart-item">
+        <span>${item.name} - R${item.price}</span>
+      </div>
+    `;
+  });
+
+  total.textContent = "Total: R" + sum;
+}
+
+function handleCheckout(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("fullName").value;
+  const address = document.getElementById("address").value;
+  const email = document.getElementById("email").value;
+
+  if (!name || !address || !email) {
+    alert("Please fill in all fields");
+    return;
+  }
+
+  alert(`Thank you ${name}! Your order has been placed.`);
+  localStorage.removeItem("cart");
+  window.location.href = "index.html";
+}
